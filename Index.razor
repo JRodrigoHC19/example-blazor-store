@@ -70,6 +70,6 @@
 
   protected override async Task OnInitializedAsync()
   {
-    specials = await HttpClient.GetFromJsonAsync<List<PizzaSpecial>>($"http://{NavigationManager.BaseUri}/specials");
+    specials = await HttpClient.GetFromJsonAsync<List<PizzaSpecial>>($"http://{NavigationManager.BaseUri}specials");
   }
 }
