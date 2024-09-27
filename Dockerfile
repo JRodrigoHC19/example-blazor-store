@@ -11,6 +11,7 @@ COPY ./SpecialsController.cs Controllers/SpecialsController.cs
 COPY ./ConfigurePizzaDialog.razor Shared/ConfigurePizzaDialog.razor
 COPY ./Index.razor Pages/Index.razor
 COPY ./OrderState.cs Services/OrderState.cs
+COPY ./launchSettings.json Properties/launchSettings.json
 ENTRYPOINT ["dotnet", "watch"]
 
 
