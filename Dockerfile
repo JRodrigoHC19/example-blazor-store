@@ -11,7 +11,7 @@ COPY ./SpecialsController.cs Controllers/SpecialsController.cs
 COPY ./ConfigurePizzaDialog.razor Shared/ConfigurePizzaDialog.razor
 COPY ./Index.razor Pages/Index.razor
 COPY ./OrderState.cs Services/OrderState.cs
-ENTRYPOINT ["dotnet", "run"]
+ENTRYPOINT ["dotnet", "watch"]
 
 
 # FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
