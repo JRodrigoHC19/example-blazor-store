@@ -12,18 +12,18 @@ COPY ./ConfigurePizzaDialog.razor Shared/ConfigurePizzaDialog.razor
 COPY ./Index.razor Pages/Index.razor
 COPY ./OrderState.cs Services/OrderState.cs
 COPY ./launchSettings.json Properties/launchSettings.json
-ENTRYPOINT ["dotnet", "watch"]
+# ENTRYPOINT ["dotnet", "watch"]
 
 
-# FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-# WORKDIR /src
-# COPY --from=create /src/BlazingPizza.csproj .
-# RUN dotnet restore
-# COPY --from=create /src .
-# RUN dotnet publish -c release -o /app
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY --from=create /src/BlazingPizza.csproj .
+RUN dotnet restore
+COPY --from=create /src .
+RUN dotnet publish -c release -o /app
 
 
-# FROM mcr.microsoft.com/dotnet/aspnet:6.0
-# WORKDIR /app
-# COPY --from=build /app .
-# ENTRYPOINT ["dotnet", "BlazingPizza"]
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY --from=build /app .
+ENTRYPOINT ["dotnet", "BlazingPizza"]
