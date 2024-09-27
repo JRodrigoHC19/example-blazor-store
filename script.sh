@@ -11,7 +11,7 @@ git clone https://github.com/MicrosoftDocs/mslearn-interact-with-data-blazor-web
 
 # Steps
 docker build -t $IMG_ID .
-docker run -d --rm -p 8085:80 --name $ID $IMG_ID
+docker run -d --rm -p 8085:8080 --name $ID $IMG_ID
 
 
 # sleep 20
