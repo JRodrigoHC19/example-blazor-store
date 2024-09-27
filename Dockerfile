@@ -17,9 +17,9 @@ COPY ./launchSettings.json Properties/launchSettings.json
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY --from=create /src/BlazingPizza.csproj .
+COPY --from=create /BlazingPizza/BlazingPizza.csproj .
 RUN dotnet restore
-COPY --from=create /src .
+COPY --from=create /BlazingPizza .
 RUN dotnet publish -c release -o /app
 
 
