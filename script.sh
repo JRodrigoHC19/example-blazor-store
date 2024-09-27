@@ -5,6 +5,8 @@ IMG_ID="img-blazor-store"
 ID="app-blazor-store"
 
 # GitHub
+git clone https://github.com/JRodrigoHC19/example-blazor-store.git
+cd example-blazor-store
 git clone https://github.com/MicrosoftDocs/mslearn-interact-with-data-blazor-web-apps.git BlazingPizza
 
 # Steps
