@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS create
-WORKDIR /src
+WORKDIR /BlazingPizza
 COPY ./BlazingPizza .
 RUN dotnet add package Microsoft.EntityFrameworkCore  --version 6.0.8
 RUN dotnet add package Microsoft.EntityFrameworkCore.Sqlite  --version 6.0.8
