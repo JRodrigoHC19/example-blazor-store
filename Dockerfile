@@ -26,4 +26,4 @@ RUN dotnet publish -c release -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app .
-ENTRYPOINT ["dotnet", "BlazingPizza"]
+ENTRYPOINT ["dotnet", "BlazingPizza.dll"]
