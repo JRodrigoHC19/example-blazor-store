@@ -72,7 +72,6 @@
   {
     var uri = new Uri(NavigationManager.BaseUri);
     var URL = $"http://{uri.Host}:{uri.Port}/specials";
-    Console.WriteLine(URL);
     specials = await HttpClient.GetFromJsonAsync<List<PizzaSpecial>>(URL);
   }
 }

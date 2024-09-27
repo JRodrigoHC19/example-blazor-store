@@ -11,17 +11,18 @@ COPY ./SpecialsController.cs Controllers/SpecialsController.cs
 COPY ./ConfigurePizzaDialog.razor Shared/ConfigurePizzaDialog.razor
 COPY ./Index.razor Pages/Index.razor
 COPY ./OrderState.cs Services/OrderState.cs
+ENTRYPOINT ["dotnet", "run"]
 
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY --from=create /src/BlazingPizza.csproj .
-RUN dotnet restore
-COPY --from=create /src .
-RUN dotnet publish -c release -o /app
+# FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+# WORKDIR /src
+# COPY --from=create /src/BlazingPizza.csproj .
+# RUN dotnet restore
+# COPY --from=create /src .
+# RUN dotnet publish -c release -o /app
 
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
-WORKDIR /app
-COPY --from=build /app .
-ENTRYPOINT ["dotnet", "BlazingPizza.dll"]
+# FROM mcr.microsoft.com/dotnet/aspnet:6.0
+# WORKDIR /app
+# COPY --from=build /app .
+# ENTRYPOINT ["dotnet", "BlazingPizza"]
